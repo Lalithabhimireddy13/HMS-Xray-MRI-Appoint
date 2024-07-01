@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+</head>
+<body>
+    <h1>Confirmation</h1>
+    <p>Your payment has been confirmed.</p>
+    <!-- Display appointment details -->
+    <h2>Appointment Details</h2>
+    <p>Date: <%= appointmentDetails.date.toDateString() %></p>
+    <p>Time: <%= appointmentDetails.time.toTimeString().split(' ')[0] %></p>
+    <!-- Add further confirmation details or processing here -->
+</body>
+</html>

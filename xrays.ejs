@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X-ray Types</title>
+</head>
+<body>
+    <h1>Types of X-rays - <%= selectedType %></h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Sub-Type</th>
+                <th>Cost</th>
+                <th>Booking</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Brain</td>
+                <td>$80</td>
+                <td><a href="/book?subType=brain&cost=80">Book Now</a></td>
+            </tr>
+            <!-- Add more rows for other X-ray sub-types -->
+        </tbody>
+    </table>
+</body>
+</html>

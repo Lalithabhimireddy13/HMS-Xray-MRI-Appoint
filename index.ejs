@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div>
+        <h1>Welcome to the Homepage</h1>
+        <select id="scans">
+            <option value="">Select Scanning Option</option>
+            <% for (let i = 0; i<scans.length; i++) { %>
+                <option value="<%=scans[i] %>"><%=scans[i] %></option>
+            <% } %>
+        </select>
+        <select id="xrays">
+            <option value="">Select X-ray Option</option>
+            <% for (let i=0; i<xrays.length; i++) { %>
+                <option value="<%=xrays[i] %>"><%= xrays[i] %></option>
+            <% } %>
+        </select>
+    </div>
+
+    <script>
+        document.getElementById('scans').addEventListener('change', function() {
+            var selectedScan = this.value;
+            if (selectedScan) {
+                window.location.href = '/scans?type=' + selectedScan;
+            }
+        });
+
+        document.getElementById('xrays').addEventListener('change', function() {
+            var selectedXray = this.value;
+            if (selectedXray) {
+                window.location.href = '/xrays?type=' + selectedXray;
+            }
+        });
+    </script>
+</body>
+</html>

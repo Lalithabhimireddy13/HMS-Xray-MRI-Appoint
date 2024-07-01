@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhonePe Payment</title>
+</head>
+<body>
+    <h1>PhonePe Payment</h1>
+    <p>Original Cost: $<%= originalCost %></p>
+    <p>Discount: <%= (discount * 100).toFixed(2) %>%</p>
+    <p>Discounted Cost: $<%= discountedCost.toFixed(2) %></p>
+    <form method="GET"  action="/confirm" onsubmit="return validatePhoneNumber()"><label>
+    <label for="phoneNumber">Phonepe Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+ <br><br>
+ <button type="submit">Submit</button>
+ 
+</label></form>
+
+    <a href="/cancel">Cancel</a>
+    <script>
+        function validatePhoneNumber() {
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var phonePeRegex = /^[0-9]{10}@[a-zA-Z]{3}$/;
+            if (!phonePeRegex.test(phoneNumber)) {
+                alert('Invalid PhonePe number format.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

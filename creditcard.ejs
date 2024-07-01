@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Payment</title>
+</head>
+<body>
+    <h1>Credit Card Payment</h1>
+    <p>Original Cost: $<%= originalCost %></p>
+    <p>Discount: <%= (discount * 100).toFixed(2) %>%</p>
+    <p>Discounted Cost: $<%= discountedCost.toFixed(2) %></p>
+    
+    <form><label>
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+    </label></form>
+    <a href="/confirm">Confirm</a>
+    <a href="/cancel">Cancel</a>
+</body>
+</html>
